@@ -2,11 +2,10 @@ import { Component, inject, OnInit } from '@angular/core'
 import { ApiService } from "../../core/services/api.service"
 
 @Component({
-  selector: 'rank-table',
-  standalone: true,
+    selector: 'rank-table',
     imports: [],
-  templateUrl: './rank-table.component.html',
-  styleUrl: './rank-table.component.scss'
+    templateUrl: './rank-table.component.html',
+    styleUrl: './rank-table.component.scss'
 })
 export class RankTableComponent implements OnInit {
 
