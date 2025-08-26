@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styles/colours";
+
+
+
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color:$outer-space;
+
+  h1, h2, h3, h4, h5, h6 {
+    background-color: $spanish-violet;
+    padding: 1.5rem 0.25rem 1.5rem 0.25rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+  color: $text-lightest;
+}

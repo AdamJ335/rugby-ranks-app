@@ -1,22 +1,5 @@
-<h1>Rugby Rankings</h1>
-<button type="button" (click)="switchRankings()">Switch Rankings</button>
-<main id="main" class="clear-top">
-  <router-outlet></router-outlet>
-</main>
-<h2>{{ranks.label}}</h2>
-<p>last updated: {{ranks.effective.label}}</p>
-
-<table>
-  <tr>
-    <th>Rank</th>
-    <th>Team</th>
-    <th>Points</th>
-  </tr>
-  @for(entry of ranks.entries; track entry.team.id){
-    <tr>
-      <td>{{ entry.pos }}</td>
-      <td>{{ entry.team.name }}</td>
-      <td>{{ (entry.pts).toFixed(2) }}</td>
-    </tr>
-  }
-</table>
+<body>
+<div class="rank-table">
+  <rank-table></rank-table>
+</div>
+</body>
