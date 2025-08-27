@@ -1,7 +1,9 @@
-.pi-arrow-up {
+.pi-arrow-up, .positive {
   color: limegreen;
+  font-size: 0.75rem;
 }
 
-.pi-arrow-down {
+.pi-arrow-down, .negative {
   color: red;
+  font-size: 0.75rem;
 }

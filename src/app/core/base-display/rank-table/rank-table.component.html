@@ -21,7 +21,11 @@
         }
       </td>
       <td>{{ entry!.team!.name }}</td>
-      <td>{{ (entry!.pts!).toFixed(2) }}</td>
+      <td>{{ (entry!.pts!).toFixed(2) }}
+        @if ((entry.pts - entry.previousPts) !== 0) {
+          <i class="pi {{ (entry.pts - entry.previousPts) > 0 ? 'positive': 'negative'}}">{{ (entry.pts - entry.previousPts) > 0 ? "+": ""}}{{ (entry.pts - entry.previousPts).toFixed(2) }}</i>
+        }
+      </td>
     </tr>
   </ng-template>
 </p-table>

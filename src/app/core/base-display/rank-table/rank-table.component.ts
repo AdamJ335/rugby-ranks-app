@@ -12,17 +12,17 @@ import { TableModule } from "primeng/table"
     styleUrl: './rank-table.component.scss'
 })
 export class RankTableComponent implements OnInit {
-  protected ranks: RanksResponse | undefined;
-  private isMens: boolean = true;
+  protected ranks: RanksResponse | undefined
+  private isMens: boolean = true
 
-  private apiService = inject(ApiService);
+  private apiService = inject(ApiService)
 
   async ngOnInit() {
-    this.ranks = await this.apiService.getRankings(this.isMens);
+    this.ranks = await this.apiService.getRankings(this.isMens)
   }
 
   async switchRankings() {
-    this.isMens = !this.isMens;
-    this.ranks = await this.apiService.getRankings(this.isMens);
+    this.isMens = !this.isMens
+    this.ranks = await this.apiService.getRankings(this.isMens)
   }
 }
