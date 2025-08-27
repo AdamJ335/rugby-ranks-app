@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { RankTableComponent } from "./model/rank-table/rank-table.component"
+import { RankTableComponent } from "./core/base-display/rank-table/rank-table.component"
 
 @Component({
     selector: 'app-root',

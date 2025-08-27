@@ -1,6 +1,6 @@
 <h1>Rugby Rankings</h1>
-<h2>{{ranks.label}}</h2>
-<p>last updated: {{ranks.effective.label}}</p>
+<h2>{{ranks!.label}}</h2>
+<p>last updated: {{ranks!.effective!.label}}</p>
 <button type="button" (click)="switchRankings()">Switch Rankings</button>
 <table>
   <tr>
@@ -8,11 +8,11 @@
     <th>Team</th>
     <th>Points</th>
   </tr>
-  @for(entry of ranks.entries; track entry.team.id){
+  @for(entry of ranks!.entries; track entry!.team!.id){
     <tr>
       <td>{{ entry.pos }}</td>
-      <td>{{ entry.team.name }}</td>
-      <td>{{ (entry.pts).toFixed(2) }}</td>
+      <td>{{ entry!.team!.name }}</td>
+      <td>{{ (entry!.pts!).toFixed(2) }}</td>
     </tr>
   }
 </table>
