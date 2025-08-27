@@ -16,4 +16,9 @@ export class ApiService {
     return firstValueFrom(this.http.get<RanksResponse>(`${environment.apiUrl}/${isMens ? 'mru': 'wru'}?language=en`))
   }
 
+  // Date must be separated with "-" (can be DD-mm-YYY or YYYY-mm-DD)
+  async getRankingsByDate(isMens: boolean, date: string): Promise<RanksResponse> {
+    return firstValueFrom(this.http.get<RanksResponse>(`${environment.apiUrl}/${isMens ? 'mru': 'wru'}?language=en&date=${date}`))
+  }
+
 }

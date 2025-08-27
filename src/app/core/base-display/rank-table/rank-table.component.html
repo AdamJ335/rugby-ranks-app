@@ -1,7 +1,10 @@
 <h1>Rugby Rankings</h1>
-<h2>{{ranks!.label}}</h2>
-<p>last updated: {{ranks!.effective!.label}}</p>
-<button type="button" (click)="switchRankings()">Switch Rankings</button>
+<h2>{{ranks!.label!}}</h2>
+<p>last updated: {{ranks!.effective!.label!}}</p>
+<p-button type="button" (click)="switchRankings()">Switch Rankings</p-button>
+
+<p-date-picker [(ngModel)]="date" [showIcon]="true" (onSelect)="onDateSelect($event)"></p-date-picker>
+<p-button type="button" icon="pi pi-times" class="p-button-danger p-button-outlined" (click)="clearDate()"></p-button>
 
 <p-table sortField="pos" [paginator]="true" [rows]="50" [value]="ranks!.entries!">
   <ng-template #header>
