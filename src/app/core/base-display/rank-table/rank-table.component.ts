@@ -1,10 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core'
 import { ApiService } from "../../services/api.service"
 import { RanksResponse } from "../../../model/ranks-response.model"
+import { TableModule } from "primeng/table"
 
 @Component({
     selector: 'rank-table',
-    imports: [],
+  imports: [
+    TableModule
+  ],
     templateUrl: './rank-table.component.html',
     styleUrl: './rank-table.component.scss'
 })

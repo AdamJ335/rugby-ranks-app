@@ -2,17 +2,26 @@
 <h2>{{ranks!.label}}</h2>
 <p>last updated: {{ranks!.effective!.label}}</p>
 <button type="button" (click)="switchRankings()">Switch Rankings</button>
-<table>
-  <tr>
-    <th>Rank</th>
-    <th>Team</th>
-    <th>Points</th>
-  </tr>
-  @for(entry of ranks!.entries; track entry!.team!.id){
+
+<p-table sortField="pos" [paginator]="true" [rows]="50" [value]="ranks!.entries!">
+  <ng-template #header>
     <tr>
-      <td>{{ entry.pos }}</td>
+      <th>Rank</th>
+      <th>Team</th>
+      <th pSortableColumn="pts" >Points</th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-entry>
+    <tr>
+      <td>{{ entry.pos }}
+        @if (entry.pos < entry.previousPos) {
+          <i class="pi pi-arrow-up">{{ entry.previousPos - entry.pos }}</i>
+        } @else if (entry.pos > entry.previousPos) {
+          <i class="pi pi-arrow-down">{{ entry.pos - entry.previousPos }}</i>
+        }
+      </td>
       <td>{{ entry!.team!.name }}</td>
       <td>{{ (entry!.pts!).toFixed(2) }}</td>
     </tr>
-  }
-</table>
+  </ng-template>
+</p-table>

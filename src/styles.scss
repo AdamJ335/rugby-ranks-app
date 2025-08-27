@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "styles/colours";
-
+@import "primeicons/primeicons.css";
 
 
 * {
@@ -13,6 +13,7 @@ html {
 
 body {
   background-color:$outer-space;
+  color: $text-lightest;
 
   h1, h2, h3, h4, h5, h6 {
     background-color: $spanish-violet;
@@ -21,5 +22,8 @@ body {
     margin-top: 0;
     text-align: center;
   }
-  color: $text-lightest;
+
+  .p-datatable-tbody > tr {
+    background-color: $dark70;
+  }
 }
